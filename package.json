@@ -1,7 +1,7 @@
 {
   "name": "grunt-html-smoosher-install-fix",
   "description": "A version of grunt-html-smoosher fixed to install with npm since the original has been failing for a while...",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "homepage": "https://github.com/motherjones/grunt-html-smoosher",
   "author": {
     "name": "Ben Breedlove",
