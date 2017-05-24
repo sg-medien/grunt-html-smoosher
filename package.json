@@ -1,5 +1,5 @@
 {
-  "name": "grunt-html-smoosher-install-fix",
+  "name": "grunt-html-smoosher-install-fix-sg",
   "description": "A version of grunt-html-smoosher fixed to install with npm since the original has been failing for a while...",
   "version": "0.1.4",
   "homepage": "https://github.com/motherjones/grunt-html-smoosher",
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/Trott/grunt-html-smoosher.git"
+    "url": "git://github.com/sg-medien/grunt-html-smoosher.git"
   },
   "bugs": {
     "url": "https://github.com/motherjones/grunt-html-smoosher/issues"
