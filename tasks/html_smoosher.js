@@ -66,7 +66,7 @@ module.exports = function(grunt) {
         }
         
         if(url.parse(style).protocol) { return; }
-        var filePath = (style.substr(0,1) === "/") ? path.resolve(options.cssDir, style.substr(1)) : path.join(path.dirname(filePair.src), style);
+        var filePath = (style.substr(0,1) === "/") ? path.resolve(options.cssDir, style.substr(1)) : path.join(path.dirname(filePair.src.toString()), style);
         grunt.log.writeln(('Including CSS: ').cyan + filePath);
         $(this).replaceWith(options.cssTags.start + processInput(grunt.file.read(filePath)) + options.cssTags.end);
       });
@@ -83,7 +83,7 @@ module.exports = function(grunt) {
           delete attributes.src;
         }
 
-        var filePath = (script.substr(0,1) === "/") ? path.resolve(options.jsDir, script.substr(1)) : path.join(path.dirname(filePair.src), script);
+        var filePath = (script.substr(0,1) === "/") ? path.resolve(options.jsDir, script.substr(1)) : path.join(path.dirname(filePair.src.toString()), script);
         grunt.log.writeln(('Including JS: ').cyan + filePath);
 
         //create and replace script with new scipt tag
@@ -95,7 +95,7 @@ module.exports = function(grunt) {
         if (!src) { return; }
         if (src.match(/^\/\//)) { return; }
         if (url.parse(src).protocol) { return; }
-        $(this).attr('src', 'data:image/' + src.substr(src.lastIndexOf('.')+1) + ';base64,' + new Buffer(grunt.file.read(path.join(path.dirname(filePair.src), src), { encoding: null })).toString('base64'));
+        $(this).attr('src', 'data:image/' + src.substr(src.lastIndexOf('.')+1) + ';base64,' + new Buffer(grunt.file.read(path.join(path.dirname(filePair.src.toString()), src), { encoding: null })).toString('base64'));
       });
 
       grunt.file.write(path.resolve(filePair.dest), $.html());
